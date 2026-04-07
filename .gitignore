@@ -1,0 +1,16 @@
+# Сборка и логи
+cargo_err.log
+debug.log
+keros.iso
+serial.log
+OVMF.fd
+target/
+isofiles/boot/keros
+
+# IDE
+.idea/
+*.iml
+
+# Временные файлы
+*.swp
+*~

@@ -1,0 +1,19 @@
+[package]
+name = "kernel"
+version = "0.1.0"
+edition = "2021"
+autotests = false
+autobenches = false
+[[bin]]
+name = "keros"
+path = "src/main.rs"
+test = false
+bench = false
+
+[dependencies]
+bitflags = "2.11.0"
+shared = { path = "../shared" }
+[target.'cfg(target_arch = "x86_64")'.dependencies]
+x86_64_arch = { path = "../x86_64_arch" }
+[target.'cfg(target_arch = "aarch64")'.dependencies]
+aarch64_arch = { path = "../aarch64_arch" }

@@ -1,0 +1,32 @@
+[package]
+name = "KerOS"
+version = "0.1.0"
+edition = "2021"
+[[bin]]
+name = "keros"
+path = "kernel/src/main.rs"
+
+[build-dependencies]
+rustc-demangle = "0.1"
+
+[workspace]
+members = ["kernel", "x86_64_arch", "aarch64_arch", "shared"]
+resolver = "2"
+
+[profile.dev]
+panic = "abort" # В ядре нет стандартной обработки паники
+debug = 2
+opt-level = 0
+
+[profile.release]
+panic = "abort"
+debug = 2
+
+[dependencies]
+bitflags = "2.11.0"
+shared = { path = "shared" }
+x86_64_arch = { path = "x86_64_arch" }
+aarch64_arch = { path = "aarch64_arch" }
+cargo-binutils = "0.4.0"
+
+
