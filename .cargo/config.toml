@@ -3,10 +3,6 @@ rustflags = [
     "-C", "linker=rust-lld",
     "-C", "linker-flavor=ld.lld",
     "-C", "force-frame-pointers=yes",
+    "-C", "code-model=large",
+    "-C", "relocation-model=static"
 ]
-
-#[source.crates-io]
-#replace-with = "vendored-sources"
-#
-#[source.vendored-sources]
-#directory = "vendor"

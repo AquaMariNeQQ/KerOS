@@ -1,0 +1,66 @@
+#!/bin/bash
+set -e
+CLEAN=false
+RELEASE=false
+DEBUG=false
+while getopts "crd" opt; do
+  case $opt in
+    c) CLEAN=true ;;
+    r) RELEASE=true ;;
+    d) DEBUG=true;;
+    *) echo "Usage: $0 [-c] [-r]" ; exit 1 ;;
+  esac
+done
+
+if [ "$CLEAN" = true ]; then
+    echo -e "\e[31m--- Cleaning Project ---\e[0m"
+    rm -rf .zig-cache zig-out build/bin build/arch
+fi
+
+echo -e "\e[35m--- Phase 1: Build ---\e[0m"
+if [ "$RELEASE" = true ]; then
+    zig build -Doptimize=ReleaseSafe
+else
+    zig build
+fi
+
+echo -e "\e[36m--- Phase 2: Building ISO ---\e[0m"
+ISO_DIR="isofiles"
+rm -rf $ISO_DIR && rm -f build/bin/keros.iso
+mkdir -p $ISO_DIR/boot/grub
+cp build/bin/keros.elf $ISO_DIR/boot/keros
+cat << EOF > $ISO_DIR/boot/grub/grub.cfg
+set timeout=0
+set default=0
+insmod all_video
+menuentry "KerOS" {
+    multiboot2 /boot/keros
+    boot
+}
+EOF
+grub-mkrescue -o build/bin/keros.iso $ISO_DIR
+
+echo -e "\e[32m--- Phase 3: Launching QEMU ---\e[0m"
+sync
+if [ "$DEBUG" = true ]; then
+qemu-system-x86_64 \
+    -m 2G \
+    -drive if=pflash,format=raw,readonly=on,file=OVMF.fd \
+    -drive format=raw,file=build/bin/keros.iso,index=0,media=cdrom \
+    -serial stdio \
+    -display sdl \
+    -vga std \
+    -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
+    -no-reboot -no-shutdown -D qemu.log \
+    -s -S
+else
+qemu-system-x86_64 \
+    -m 2G \
+    -drive if=pflash,format=raw,readonly=on,file=OVMF.fd \
+    -drive format=raw,file=build/bin/keros.iso,index=0,media=cdrom \
+    -serial stdio \
+    -display sdl \
+    -vga std \
+    -device isa-debug-exit,iobase=0xf4,iosize=0x04 \
+    -no-reboot -no-shutdown -D qemu.log
+fi

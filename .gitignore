@@ -6,7 +6,10 @@ serial.log
 OVMF.fd
 target/
 isofiles/boot/keros
-
+build
+zig-out
+.zig-cache
+qemu.log
 # IDE
 .idea/
 *.iml
