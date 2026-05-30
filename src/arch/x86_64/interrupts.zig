@@ -38,7 +38,7 @@ pub fn setup() void {
         idt[i] = .{
             .offset_low = @truncate(int_stub_array[i]),
             .selector = 0x08, // kernel code selector
-            .ist = if (i < 33) 1 else 0, // todo
+            .ist = if (i < 33) 1 else 0,
             .type = 0xE,
             .zero = 0,
             .dpl = 0,
