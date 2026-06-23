@@ -11,7 +11,6 @@ const CurrentData = @import("../../arch.zig").PCDSource;
 const IntrusiveList = @import("../../datastructs/intrusive_linked_list.zig").IntrusiveList;
 const toVirt = @import("../../utils.zig").toVirt;
 const toPhys = @import("../../utils.zig").toPhys;
-const println = @import("../../utils.zig").println;
 pub const SlabCache = struct {
     /// Current page
     active_page: ?*Page, // Текущая страница, откуда берем объекты
@@ -46,13 +45,7 @@ pub const SlubAllocator = struct {
     remote_free_heads: [9]?*u64,
     const Self = @This();
     fn collect_remote(self: *Self) void {
-        var lists = blk: {
-            var lsts: [9]?*u64 = undefined;
-            for (&lsts) |*lst| {
-                lst.* = null;
-            }
-            break :blk lsts;
-        };
+        var lists: [9]?*u64 = @splat(null);
         for (&self.remote_free_heads, 0..) |*head, index| {
             lists[index] = @atomicRmw(?*u64, head, .Xchg, null, .acquire);
         }
@@ -78,10 +71,6 @@ pub const SlubAllocator = struct {
                     cache.partial_pages.push_back(page);
                 }
                 if (page.usage == 0) {
-                    // CurrentOut::serial_print("[");
-                    // CurrentOut::serial_print_hex(cache.obj_size as u64);
-                    // CurrentOut::serial_print("]: CR: FP += ");
-                    // CurrentOut::serial_println_hex(cache.free_pages as u64);
                     cache.free_pages += 1;
                 }
                 curr_obj = next_obj;
@@ -89,15 +78,11 @@ pub const SlubAllocator = struct {
         }
     }
     fn refill(self: *Self, order: u8) void {
-        // CurrentOut::serial_println("Y1");
         self.collect_remote();
 
-        // CurrentOut::serial_println("Y2");
         const cache = &self.caches[order];
-        // CurrentOut::serial_println("Y4");
         if (cache.free_list == null) {
             if (!cache.partial_pages.isEmpty()) {
-                // CurrentOut::serial_println("Y6");
                 const page: *Page = cache.partial_pages.pop_front() orelse @panic("hell 91");
                 const page_list = page.free_list_head;
                 cache.free_list = @ptrCast(page_list);
@@ -105,13 +90,8 @@ pub const SlubAllocator = struct {
                 page.free_list_head = null;
                 //  if got - return; if not - --->
             } else {
-                // CurrentOut::serial_println("Y7");
                 const cpudata = CurrentData.getPerCpu();
                 if (cpudata.local_buddy.alloc(._4KB)) |allocated| {
-                    // CurrentOut::serial_print("[");
-                    // CurrentOut::serial_print_hex(cache.obj_size as u64);
-                    // CurrentOut::serial_print("]: RF: FP += ");
-                    // CurrentOut::serial_println_hex(cache.free_pages as u64);
                     cache.free_pages += 1;
                     const page = get_page(self.chunks, allocated);
                     if (page) |realpage| {
@@ -237,13 +217,7 @@ pub const SlubAllocator = struct {
             },
             .cpu_id = cpu_id,
             .chunks = metadata_chunks,
-            .remote_free_heads = blk: {
-                var heads: [9]?*u64 = undefined;
-                for (&heads) |*head| {
-                    head.* = null;
-                }
-                break :blk heads;
-            },
+            .remote_free_heads = @splat(null),
         };
     }
 };

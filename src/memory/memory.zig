@@ -1,4 +1,4 @@
-const Spinlock = @import("../smp/spinlock.zig").Spinlock;
+const Spinlock = @import("../datastructs/spinlock.zig").Spinlock;
 const BuddyAllocator = @import("alloc/buddy.zig").BuddyAllocator;
 
 pub const MemoryRegionKind = enum {
@@ -22,7 +22,7 @@ pub const MemoryRegion = struct {
     end: u64,
     kind: MemoryRegionKind,
     pub fn size(self: @This()) usize {
-        return @as(usize, (self.end-self.start));
+        return @as(usize, (self.end - self.start));
     }
 };
 

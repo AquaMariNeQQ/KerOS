@@ -1,5 +1,6 @@
 const IntrusiveNode = @import("../datastructs/intrusive_linked_list.zig").IntrusiveNode;
 const IntrusiveList = @import("../datastructs/intrusive_linked_list.zig").IntrusiveList;
+const PerCpuData = @import("../arch.zig").PCDSource;
 const println = @import("../utils.zig").println;
 
 pub fn int_dispatch(frame: *anyopaque, vector: u64) callconv(.c) void {
@@ -8,17 +9,15 @@ pub fn int_dispatch(frame: *anyopaque, vector: u64) callconv(.c) void {
         h.handler(frame);
         handler = h.list_node.next;
     }
+    const ic = PerCpuData.getPerCpu().local_ic;
+    if (ic.isHardwareInterrupt(ic.ptr, @intCast(vector))) {
+        ic.eoi(ic.ptr); // todo: figure out why the fuck the EOI doesn't work properly
+    }
 }
 
+const ilist = IntrusiveList(InterruptHandler);
 var InterruptRegistry = Dispatcher {
-    .handlers = blk: {
-        var lsts: [256]IntrusiveList(InterruptHandler) = undefined;
-        for (&lsts) |*lst| {
-            lst.head = null;
-            lst.tail = null;
-        }
-        break :blk lsts;
-    }
+    .handlers = @splat(ilist.init())
 };
 
 const Dispatcher = struct {

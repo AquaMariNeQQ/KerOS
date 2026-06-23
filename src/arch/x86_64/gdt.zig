@@ -70,14 +70,3 @@ const GDTTSSEntry = packed struct (u128) {
     base_upper: u32 = 0,
     reserved: u32 = 0,
 };
-comptime {
-    if (@sizeOf(GDTTSSEntry) != 16) {
-        @compileError("fuck 1");
-    }
-    if (@sizeOf(GDTEntry) != 8) {
-        @compileError("fuck 2");
-    }
-    if (@sizeOf(GDTR) != 10) {
-        @compileError("fuck 3");
-    }
-}

@@ -1,7 +1,6 @@
 const CpuDataProvider = @import("../../arch.zig").PCDSource;
 const GDT = @import("gdt.zig").GDT;
 const toVirt = @import("../../utils.zig").toVirt;
-const println = @import("../../utils.zig").println;
 
 pub const TSS = extern struct {
     reserved0: u32 align(2) = 0,

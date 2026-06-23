@@ -45,3 +45,7 @@ pub fn print(comptime str: []const u8, args: anytype) void {
 pub fn println(comptime str: []const u8, args: anytype) void {
     print(str ++ "\n", args);
 }
+
+pub fn addBytes(ptr: *anyopaque, amount: u64) *anyopaque {
+    return @ptrFromInt(@intFromPtr(ptr) + amount);
+}

@@ -13,24 +13,18 @@ pub const IDTEntry = packed struct(u128) {
     reserved1: u32 = 0,
 };
 
-var idt = make: {
-    var entries: [256]IDTEntry = undefined;
-    for (&entries) |*entry| {
-        entry.* = .{
-            .offset_low = 0,
-            .selector = 0,
-            .ist = 0,
-            .reserved = 0,
-            .type = 0,
-            .zero = 0,
-            .dpl = 0,
-            .present = 0,
-            .offset_mid = 0,
-            .offset_high = 0
-        };
-    }
-    break :make entries;
-};
+var idt: [256]IDTEntry = @splat(.{
+    .offset_low = 0,
+    .selector = 0,
+    .ist = 0,
+    .reserved = 0,
+    .type = 0,
+    .zero = 0,
+    .dpl = 0,
+    .present = 0,
+    .offset_mid = 0,
+    .offset_high = 0
+});
 
 pub fn setup() void {
     idtr.base = @intFromPtr(&idt);
@@ -49,17 +43,6 @@ pub fn setup() void {
     }
 }
 
-comptime {
-    if (@sizeOf(IDTEntry) != 16) {
-        @compileError("fuck 5");
-    }
-    if (@sizeOf(IDTR) != 10) {
-        @compileError("fuck 6");
-    }
-    if (@sizeOf([256]IDTEntry) - 1 != 4095) {
-        @compileError("fuck 7");
-    }
-}
 
 pub fn loadInterruptTable() void {
     asm volatile (
@@ -95,3 +78,9 @@ pub fn enableInterrupts() void {
 }
 
 extern const int_stub_array: [256]usize;
+
+pub fn pf_handler(_: *anyopaque) void {
+    const cr2 = asm volatile ("mov %%cr2, %[cr2]" : [cr2] "=r" (-> u64));
+    println("PF at cr2={x}", .{cr2});
+    @panic("Kernel #PF");
+}

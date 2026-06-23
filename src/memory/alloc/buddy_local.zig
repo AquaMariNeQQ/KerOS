@@ -9,7 +9,6 @@ const get_buddy = @import("utils.zig").get_buddy;
 const assert = @import("std").debug.assert;
 const IntrusiveList = @import("../../datastructs/intrusive_linked_list.zig").IntrusiveList;
 const Page = @import("buddy.zig").Page;
-const println = @import("../../utils.zig").println;
 
 pub const CpuLocalBuddyAllocator = struct {
     free_lists: [BUDDY_LEVELS]IntrusiveList(Page),
@@ -93,7 +92,7 @@ pub const CpuLocalBuddyAllocator = struct {
                         break;
                     }
                     if (current == end) break;
-                    current-=1;
+                    current -=1 ;
                 }
             }
             if (is_success) {
@@ -240,14 +239,9 @@ pub const CpuLocalBuddyAllocator = struct {
         var allocator = ALLOCATOR.lock();
         const metadata_chunks = allocator.get_chunks_ptr();
         ALLOCATOR.unlock();
+        const ilist = IntrusiveList(Page);
         var s = Self {
-            .free_lists = blk: {
-                var lists: [BUDDY_LEVELS]IntrusiveList(Page) = undefined;
-                for (&lists) |*l| {
-                    l.* = IntrusiveList(Page).init();
-                }
-                break :blk lists;
-            },
+            .free_lists = @splat(ilist.init()),
             .metadata_chunks = metadata_chunks,
             .free_pages_count = 0,
             .cpu_id = cpu_id,

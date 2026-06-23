@@ -23,10 +23,10 @@ int_stub_0:
     push r15
     mov rdi, rsp
     mov rsi, 0
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -66,10 +66,10 @@ int_stub_1:
     push r15
     mov rdi, rsp
     mov rsi, 1
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -109,10 +109,10 @@ int_stub_2:
     push r15
     mov rdi, rsp
     mov rsi, 2
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -152,10 +152,10 @@ int_stub_3:
     push r15
     mov rdi, rsp
     mov rsi, 3
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -195,10 +195,10 @@ int_stub_4:
     push r15
     mov rdi, rsp
     mov rsi, 4
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -238,10 +238,10 @@ int_stub_5:
     push r15
     mov rdi, rsp
     mov rsi, 5
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -281,10 +281,10 @@ int_stub_6:
     push r15
     mov rdi, rsp
     mov rsi, 6
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -324,10 +324,10 @@ int_stub_7:
     push r15
     mov rdi, rsp
     mov rsi, 7
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -367,10 +367,10 @@ int_stub_8:
     push r15
     mov rdi, rsp
     mov rsi, 8
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -410,10 +410,10 @@ int_stub_9:
     push r15
     mov rdi, rsp
     mov rsi, 9
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -453,10 +453,10 @@ int_stub_10:
     push r15
     mov rdi, rsp
     mov rsi, 10
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -496,10 +496,10 @@ int_stub_11:
     push r15
     mov rdi, rsp
     mov rsi, 11
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -539,10 +539,10 @@ int_stub_12:
     push r15
     mov rdi, rsp
     mov rsi, 12
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -582,10 +582,10 @@ int_stub_13:
     push r15
     mov rdi, rsp
     mov rsi, 13
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -625,10 +625,10 @@ int_stub_14:
     push r15
     mov rdi, rsp
     mov rsi, 14
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -668,10 +668,10 @@ int_stub_15:
     push r15
     mov rdi, rsp
     mov rsi, 15
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -711,10 +711,10 @@ int_stub_16:
     push r15
     mov rdi, rsp
     mov rsi, 16
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -754,10 +754,10 @@ int_stub_17:
     push r15
     mov rdi, rsp
     mov rsi, 17
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -797,10 +797,10 @@ int_stub_18:
     push r15
     mov rdi, rsp
     mov rsi, 18
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -840,10 +840,10 @@ int_stub_19:
     push r15
     mov rdi, rsp
     mov rsi, 19
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -883,10 +883,10 @@ int_stub_20:
     push r15
     mov rdi, rsp
     mov rsi, 20
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -926,10 +926,10 @@ int_stub_21:
     push r15
     mov rdi, rsp
     mov rsi, 21
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -969,10 +969,10 @@ int_stub_22:
     push r15
     mov rdi, rsp
     mov rsi, 22
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1012,10 +1012,10 @@ int_stub_23:
     push r15
     mov rdi, rsp
     mov rsi, 23
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1055,10 +1055,10 @@ int_stub_24:
     push r15
     mov rdi, rsp
     mov rsi, 24
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1098,10 +1098,10 @@ int_stub_25:
     push r15
     mov rdi, rsp
     mov rsi, 25
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1141,10 +1141,10 @@ int_stub_26:
     push r15
     mov rdi, rsp
     mov rsi, 26
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1184,10 +1184,10 @@ int_stub_27:
     push r15
     mov rdi, rsp
     mov rsi, 27
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1227,10 +1227,10 @@ int_stub_28:
     push r15
     mov rdi, rsp
     mov rsi, 28
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1270,10 +1270,10 @@ int_stub_29:
     push r15
     mov rdi, rsp
     mov rsi, 29
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1313,10 +1313,10 @@ int_stub_30:
     push r15
     mov rdi, rsp
     mov rsi, 30
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1356,10 +1356,10 @@ int_stub_31:
     push r15
     mov rdi, rsp
     mov rsi, 31
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1399,10 +1399,10 @@ int_stub_32:
     push r15
     mov rdi, rsp
     mov rsi, 32
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1442,10 +1442,10 @@ int_stub_33:
     push r15
     mov rdi, rsp
     mov rsi, 33
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1485,10 +1485,10 @@ int_stub_34:
     push r15
     mov rdi, rsp
     mov rsi, 34
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1528,10 +1528,10 @@ int_stub_35:
     push r15
     mov rdi, rsp
     mov rsi, 35
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1571,10 +1571,10 @@ int_stub_36:
     push r15
     mov rdi, rsp
     mov rsi, 36
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1614,10 +1614,10 @@ int_stub_37:
     push r15
     mov rdi, rsp
     mov rsi, 37
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1657,10 +1657,10 @@ int_stub_38:
     push r15
     mov rdi, rsp
     mov rsi, 38
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1700,10 +1700,10 @@ int_stub_39:
     push r15
     mov rdi, rsp
     mov rsi, 39
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1743,10 +1743,10 @@ int_stub_40:
     push r15
     mov rdi, rsp
     mov rsi, 40
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1786,10 +1786,10 @@ int_stub_41:
     push r15
     mov rdi, rsp
     mov rsi, 41
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1829,10 +1829,10 @@ int_stub_42:
     push r15
     mov rdi, rsp
     mov rsi, 42
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1872,10 +1872,10 @@ int_stub_43:
     push r15
     mov rdi, rsp
     mov rsi, 43
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1915,10 +1915,10 @@ int_stub_44:
     push r15
     mov rdi, rsp
     mov rsi, 44
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -1958,10 +1958,10 @@ int_stub_45:
     push r15
     mov rdi, rsp
     mov rsi, 45
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2001,10 +2001,10 @@ int_stub_46:
     push r15
     mov rdi, rsp
     mov rsi, 46
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2044,10 +2044,10 @@ int_stub_47:
     push r15
     mov rdi, rsp
     mov rsi, 47
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2087,10 +2087,10 @@ int_stub_48:
     push r15
     mov rdi, rsp
     mov rsi, 48
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2130,10 +2130,10 @@ int_stub_49:
     push r15
     mov rdi, rsp
     mov rsi, 49
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2173,10 +2173,10 @@ int_stub_50:
     push r15
     mov rdi, rsp
     mov rsi, 50
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2216,10 +2216,10 @@ int_stub_51:
     push r15
     mov rdi, rsp
     mov rsi, 51
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2259,10 +2259,10 @@ int_stub_52:
     push r15
     mov rdi, rsp
     mov rsi, 52
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2302,10 +2302,10 @@ int_stub_53:
     push r15
     mov rdi, rsp
     mov rsi, 53
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2345,10 +2345,10 @@ int_stub_54:
     push r15
     mov rdi, rsp
     mov rsi, 54
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2388,10 +2388,10 @@ int_stub_55:
     push r15
     mov rdi, rsp
     mov rsi, 55
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2431,10 +2431,10 @@ int_stub_56:
     push r15
     mov rdi, rsp
     mov rsi, 56
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2474,10 +2474,10 @@ int_stub_57:
     push r15
     mov rdi, rsp
     mov rsi, 57
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2517,10 +2517,10 @@ int_stub_58:
     push r15
     mov rdi, rsp
     mov rsi, 58
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2560,10 +2560,10 @@ int_stub_59:
     push r15
     mov rdi, rsp
     mov rsi, 59
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2603,10 +2603,10 @@ int_stub_60:
     push r15
     mov rdi, rsp
     mov rsi, 60
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2646,10 +2646,10 @@ int_stub_61:
     push r15
     mov rdi, rsp
     mov rsi, 61
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2689,10 +2689,10 @@ int_stub_62:
     push r15
     mov rdi, rsp
     mov rsi, 62
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2732,10 +2732,10 @@ int_stub_63:
     push r15
     mov rdi, rsp
     mov rsi, 63
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2775,10 +2775,10 @@ int_stub_64:
     push r15
     mov rdi, rsp
     mov rsi, 64
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2818,10 +2818,10 @@ int_stub_65:
     push r15
     mov rdi, rsp
     mov rsi, 65
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2861,10 +2861,10 @@ int_stub_66:
     push r15
     mov rdi, rsp
     mov rsi, 66
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2904,10 +2904,10 @@ int_stub_67:
     push r15
     mov rdi, rsp
     mov rsi, 67
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2947,10 +2947,10 @@ int_stub_68:
     push r15
     mov rdi, rsp
     mov rsi, 68
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -2990,10 +2990,10 @@ int_stub_69:
     push r15
     mov rdi, rsp
     mov rsi, 69
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3033,10 +3033,10 @@ int_stub_70:
     push r15
     mov rdi, rsp
     mov rsi, 70
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3076,10 +3076,10 @@ int_stub_71:
     push r15
     mov rdi, rsp
     mov rsi, 71
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3119,10 +3119,10 @@ int_stub_72:
     push r15
     mov rdi, rsp
     mov rsi, 72
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3162,10 +3162,10 @@ int_stub_73:
     push r15
     mov rdi, rsp
     mov rsi, 73
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3205,10 +3205,10 @@ int_stub_74:
     push r15
     mov rdi, rsp
     mov rsi, 74
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3248,10 +3248,10 @@ int_stub_75:
     push r15
     mov rdi, rsp
     mov rsi, 75
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3291,10 +3291,10 @@ int_stub_76:
     push r15
     mov rdi, rsp
     mov rsi, 76
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3334,10 +3334,10 @@ int_stub_77:
     push r15
     mov rdi, rsp
     mov rsi, 77
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3377,10 +3377,10 @@ int_stub_78:
     push r15
     mov rdi, rsp
     mov rsi, 78
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3420,10 +3420,10 @@ int_stub_79:
     push r15
     mov rdi, rsp
     mov rsi, 79
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3463,10 +3463,10 @@ int_stub_80:
     push r15
     mov rdi, rsp
     mov rsi, 80
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3506,10 +3506,10 @@ int_stub_81:
     push r15
     mov rdi, rsp
     mov rsi, 81
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3549,10 +3549,10 @@ int_stub_82:
     push r15
     mov rdi, rsp
     mov rsi, 82
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3592,10 +3592,10 @@ int_stub_83:
     push r15
     mov rdi, rsp
     mov rsi, 83
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3635,10 +3635,10 @@ int_stub_84:
     push r15
     mov rdi, rsp
     mov rsi, 84
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3678,10 +3678,10 @@ int_stub_85:
     push r15
     mov rdi, rsp
     mov rsi, 85
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3721,10 +3721,10 @@ int_stub_86:
     push r15
     mov rdi, rsp
     mov rsi, 86
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3764,10 +3764,10 @@ int_stub_87:
     push r15
     mov rdi, rsp
     mov rsi, 87
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3807,10 +3807,10 @@ int_stub_88:
     push r15
     mov rdi, rsp
     mov rsi, 88
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3850,10 +3850,10 @@ int_stub_89:
     push r15
     mov rdi, rsp
     mov rsi, 89
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3893,10 +3893,10 @@ int_stub_90:
     push r15
     mov rdi, rsp
     mov rsi, 90
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3936,10 +3936,10 @@ int_stub_91:
     push r15
     mov rdi, rsp
     mov rsi, 91
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -3979,10 +3979,10 @@ int_stub_92:
     push r15
     mov rdi, rsp
     mov rsi, 92
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4022,10 +4022,10 @@ int_stub_93:
     push r15
     mov rdi, rsp
     mov rsi, 93
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4065,10 +4065,10 @@ int_stub_94:
     push r15
     mov rdi, rsp
     mov rsi, 94
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4108,10 +4108,10 @@ int_stub_95:
     push r15
     mov rdi, rsp
     mov rsi, 95
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4151,10 +4151,10 @@ int_stub_96:
     push r15
     mov rdi, rsp
     mov rsi, 96
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4194,10 +4194,10 @@ int_stub_97:
     push r15
     mov rdi, rsp
     mov rsi, 97
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4237,10 +4237,10 @@ int_stub_98:
     push r15
     mov rdi, rsp
     mov rsi, 98
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4280,10 +4280,10 @@ int_stub_99:
     push r15
     mov rdi, rsp
     mov rsi, 99
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4323,10 +4323,10 @@ int_stub_100:
     push r15
     mov rdi, rsp
     mov rsi, 100
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4366,10 +4366,10 @@ int_stub_101:
     push r15
     mov rdi, rsp
     mov rsi, 101
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4409,10 +4409,10 @@ int_stub_102:
     push r15
     mov rdi, rsp
     mov rsi, 102
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4452,10 +4452,10 @@ int_stub_103:
     push r15
     mov rdi, rsp
     mov rsi, 103
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4495,10 +4495,10 @@ int_stub_104:
     push r15
     mov rdi, rsp
     mov rsi, 104
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4538,10 +4538,10 @@ int_stub_105:
     push r15
     mov rdi, rsp
     mov rsi, 105
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4581,10 +4581,10 @@ int_stub_106:
     push r15
     mov rdi, rsp
     mov rsi, 106
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4624,10 +4624,10 @@ int_stub_107:
     push r15
     mov rdi, rsp
     mov rsi, 107
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4667,10 +4667,10 @@ int_stub_108:
     push r15
     mov rdi, rsp
     mov rsi, 108
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4710,10 +4710,10 @@ int_stub_109:
     push r15
     mov rdi, rsp
     mov rsi, 109
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4753,10 +4753,10 @@ int_stub_110:
     push r15
     mov rdi, rsp
     mov rsi, 110
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4796,10 +4796,10 @@ int_stub_111:
     push r15
     mov rdi, rsp
     mov rsi, 111
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4839,10 +4839,10 @@ int_stub_112:
     push r15
     mov rdi, rsp
     mov rsi, 112
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4882,10 +4882,10 @@ int_stub_113:
     push r15
     mov rdi, rsp
     mov rsi, 113
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4925,10 +4925,10 @@ int_stub_114:
     push r15
     mov rdi, rsp
     mov rsi, 114
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -4968,10 +4968,10 @@ int_stub_115:
     push r15
     mov rdi, rsp
     mov rsi, 115
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5011,10 +5011,10 @@ int_stub_116:
     push r15
     mov rdi, rsp
     mov rsi, 116
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5054,10 +5054,10 @@ int_stub_117:
     push r15
     mov rdi, rsp
     mov rsi, 117
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5097,10 +5097,10 @@ int_stub_118:
     push r15
     mov rdi, rsp
     mov rsi, 118
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5140,10 +5140,10 @@ int_stub_119:
     push r15
     mov rdi, rsp
     mov rsi, 119
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5183,10 +5183,10 @@ int_stub_120:
     push r15
     mov rdi, rsp
     mov rsi, 120
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5226,10 +5226,10 @@ int_stub_121:
     push r15
     mov rdi, rsp
     mov rsi, 121
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5269,10 +5269,10 @@ int_stub_122:
     push r15
     mov rdi, rsp
     mov rsi, 122
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5312,10 +5312,10 @@ int_stub_123:
     push r15
     mov rdi, rsp
     mov rsi, 123
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5355,10 +5355,10 @@ int_stub_124:
     push r15
     mov rdi, rsp
     mov rsi, 124
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5398,10 +5398,10 @@ int_stub_125:
     push r15
     mov rdi, rsp
     mov rsi, 125
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5441,10 +5441,10 @@ int_stub_126:
     push r15
     mov rdi, rsp
     mov rsi, 126
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5484,10 +5484,10 @@ int_stub_127:
     push r15
     mov rdi, rsp
     mov rsi, 127
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5527,10 +5527,10 @@ int_stub_128:
     push r15
     mov rdi, rsp
     mov rsi, 128
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5570,10 +5570,10 @@ int_stub_129:
     push r15
     mov rdi, rsp
     mov rsi, 129
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5613,10 +5613,10 @@ int_stub_130:
     push r15
     mov rdi, rsp
     mov rsi, 130
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5656,10 +5656,10 @@ int_stub_131:
     push r15
     mov rdi, rsp
     mov rsi, 131
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5699,10 +5699,10 @@ int_stub_132:
     push r15
     mov rdi, rsp
     mov rsi, 132
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5742,10 +5742,10 @@ int_stub_133:
     push r15
     mov rdi, rsp
     mov rsi, 133
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5785,10 +5785,10 @@ int_stub_134:
     push r15
     mov rdi, rsp
     mov rsi, 134
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5828,10 +5828,10 @@ int_stub_135:
     push r15
     mov rdi, rsp
     mov rsi, 135
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5871,10 +5871,10 @@ int_stub_136:
     push r15
     mov rdi, rsp
     mov rsi, 136
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5914,10 +5914,10 @@ int_stub_137:
     push r15
     mov rdi, rsp
     mov rsi, 137
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -5957,10 +5957,10 @@ int_stub_138:
     push r15
     mov rdi, rsp
     mov rsi, 138
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6000,10 +6000,10 @@ int_stub_139:
     push r15
     mov rdi, rsp
     mov rsi, 139
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6043,10 +6043,10 @@ int_stub_140:
     push r15
     mov rdi, rsp
     mov rsi, 140
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6086,10 +6086,10 @@ int_stub_141:
     push r15
     mov rdi, rsp
     mov rsi, 141
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6129,10 +6129,10 @@ int_stub_142:
     push r15
     mov rdi, rsp
     mov rsi, 142
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6172,10 +6172,10 @@ int_stub_143:
     push r15
     mov rdi, rsp
     mov rsi, 143
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6215,10 +6215,10 @@ int_stub_144:
     push r15
     mov rdi, rsp
     mov rsi, 144
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6258,10 +6258,10 @@ int_stub_145:
     push r15
     mov rdi, rsp
     mov rsi, 145
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6301,10 +6301,10 @@ int_stub_146:
     push r15
     mov rdi, rsp
     mov rsi, 146
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6344,10 +6344,10 @@ int_stub_147:
     push r15
     mov rdi, rsp
     mov rsi, 147
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6387,10 +6387,10 @@ int_stub_148:
     push r15
     mov rdi, rsp
     mov rsi, 148
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6430,10 +6430,10 @@ int_stub_149:
     push r15
     mov rdi, rsp
     mov rsi, 149
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6473,10 +6473,10 @@ int_stub_150:
     push r15
     mov rdi, rsp
     mov rsi, 150
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6516,10 +6516,10 @@ int_stub_151:
     push r15
     mov rdi, rsp
     mov rsi, 151
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6559,10 +6559,10 @@ int_stub_152:
     push r15
     mov rdi, rsp
     mov rsi, 152
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6602,10 +6602,10 @@ int_stub_153:
     push r15
     mov rdi, rsp
     mov rsi, 153
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6645,10 +6645,10 @@ int_stub_154:
     push r15
     mov rdi, rsp
     mov rsi, 154
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6688,10 +6688,10 @@ int_stub_155:
     push r15
     mov rdi, rsp
     mov rsi, 155
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6731,10 +6731,10 @@ int_stub_156:
     push r15
     mov rdi, rsp
     mov rsi, 156
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6774,10 +6774,10 @@ int_stub_157:
     push r15
     mov rdi, rsp
     mov rsi, 157
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6817,10 +6817,10 @@ int_stub_158:
     push r15
     mov rdi, rsp
     mov rsi, 158
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6860,10 +6860,10 @@ int_stub_159:
     push r15
     mov rdi, rsp
     mov rsi, 159
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6903,10 +6903,10 @@ int_stub_160:
     push r15
     mov rdi, rsp
     mov rsi, 160
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6946,10 +6946,10 @@ int_stub_161:
     push r15
     mov rdi, rsp
     mov rsi, 161
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -6989,10 +6989,10 @@ int_stub_162:
     push r15
     mov rdi, rsp
     mov rsi, 162
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7032,10 +7032,10 @@ int_stub_163:
     push r15
     mov rdi, rsp
     mov rsi, 163
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7075,10 +7075,10 @@ int_stub_164:
     push r15
     mov rdi, rsp
     mov rsi, 164
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7118,10 +7118,10 @@ int_stub_165:
     push r15
     mov rdi, rsp
     mov rsi, 165
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7161,10 +7161,10 @@ int_stub_166:
     push r15
     mov rdi, rsp
     mov rsi, 166
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7204,10 +7204,10 @@ int_stub_167:
     push r15
     mov rdi, rsp
     mov rsi, 167
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7247,10 +7247,10 @@ int_stub_168:
     push r15
     mov rdi, rsp
     mov rsi, 168
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7290,10 +7290,10 @@ int_stub_169:
     push r15
     mov rdi, rsp
     mov rsi, 169
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7333,10 +7333,10 @@ int_stub_170:
     push r15
     mov rdi, rsp
     mov rsi, 170
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7376,10 +7376,10 @@ int_stub_171:
     push r15
     mov rdi, rsp
     mov rsi, 171
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7419,10 +7419,10 @@ int_stub_172:
     push r15
     mov rdi, rsp
     mov rsi, 172
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7462,10 +7462,10 @@ int_stub_173:
     push r15
     mov rdi, rsp
     mov rsi, 173
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7505,10 +7505,10 @@ int_stub_174:
     push r15
     mov rdi, rsp
     mov rsi, 174
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7548,10 +7548,10 @@ int_stub_175:
     push r15
     mov rdi, rsp
     mov rsi, 175
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7591,10 +7591,10 @@ int_stub_176:
     push r15
     mov rdi, rsp
     mov rsi, 176
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7634,10 +7634,10 @@ int_stub_177:
     push r15
     mov rdi, rsp
     mov rsi, 177
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7677,10 +7677,10 @@ int_stub_178:
     push r15
     mov rdi, rsp
     mov rsi, 178
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7720,10 +7720,10 @@ int_stub_179:
     push r15
     mov rdi, rsp
     mov rsi, 179
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7763,10 +7763,10 @@ int_stub_180:
     push r15
     mov rdi, rsp
     mov rsi, 180
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7806,10 +7806,10 @@ int_stub_181:
     push r15
     mov rdi, rsp
     mov rsi, 181
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7849,10 +7849,10 @@ int_stub_182:
     push r15
     mov rdi, rsp
     mov rsi, 182
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7892,10 +7892,10 @@ int_stub_183:
     push r15
     mov rdi, rsp
     mov rsi, 183
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7935,10 +7935,10 @@ int_stub_184:
     push r15
     mov rdi, rsp
     mov rsi, 184
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -7978,10 +7978,10 @@ int_stub_185:
     push r15
     mov rdi, rsp
     mov rsi, 185
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8021,10 +8021,10 @@ int_stub_186:
     push r15
     mov rdi, rsp
     mov rsi, 186
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8064,10 +8064,10 @@ int_stub_187:
     push r15
     mov rdi, rsp
     mov rsi, 187
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8107,10 +8107,10 @@ int_stub_188:
     push r15
     mov rdi, rsp
     mov rsi, 188
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8150,10 +8150,10 @@ int_stub_189:
     push r15
     mov rdi, rsp
     mov rsi, 189
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8193,10 +8193,10 @@ int_stub_190:
     push r15
     mov rdi, rsp
     mov rsi, 190
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8236,10 +8236,10 @@ int_stub_191:
     push r15
     mov rdi, rsp
     mov rsi, 191
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8279,10 +8279,10 @@ int_stub_192:
     push r15
     mov rdi, rsp
     mov rsi, 192
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8322,10 +8322,10 @@ int_stub_193:
     push r15
     mov rdi, rsp
     mov rsi, 193
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8365,10 +8365,10 @@ int_stub_194:
     push r15
     mov rdi, rsp
     mov rsi, 194
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8408,10 +8408,10 @@ int_stub_195:
     push r15
     mov rdi, rsp
     mov rsi, 195
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8451,10 +8451,10 @@ int_stub_196:
     push r15
     mov rdi, rsp
     mov rsi, 196
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8494,10 +8494,10 @@ int_stub_197:
     push r15
     mov rdi, rsp
     mov rsi, 197
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8537,10 +8537,10 @@ int_stub_198:
     push r15
     mov rdi, rsp
     mov rsi, 198
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8580,10 +8580,10 @@ int_stub_199:
     push r15
     mov rdi, rsp
     mov rsi, 199
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8623,10 +8623,10 @@ int_stub_200:
     push r15
     mov rdi, rsp
     mov rsi, 200
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8666,10 +8666,10 @@ int_stub_201:
     push r15
     mov rdi, rsp
     mov rsi, 201
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8709,10 +8709,10 @@ int_stub_202:
     push r15
     mov rdi, rsp
     mov rsi, 202
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8752,10 +8752,10 @@ int_stub_203:
     push r15
     mov rdi, rsp
     mov rsi, 203
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8795,10 +8795,10 @@ int_stub_204:
     push r15
     mov rdi, rsp
     mov rsi, 204
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8838,10 +8838,10 @@ int_stub_205:
     push r15
     mov rdi, rsp
     mov rsi, 205
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8881,10 +8881,10 @@ int_stub_206:
     push r15
     mov rdi, rsp
     mov rsi, 206
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8924,10 +8924,10 @@ int_stub_207:
     push r15
     mov rdi, rsp
     mov rsi, 207
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -8967,10 +8967,10 @@ int_stub_208:
     push r15
     mov rdi, rsp
     mov rsi, 208
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9010,10 +9010,10 @@ int_stub_209:
     push r15
     mov rdi, rsp
     mov rsi, 209
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9053,10 +9053,10 @@ int_stub_210:
     push r15
     mov rdi, rsp
     mov rsi, 210
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9096,10 +9096,10 @@ int_stub_211:
     push r15
     mov rdi, rsp
     mov rsi, 211
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9139,10 +9139,10 @@ int_stub_212:
     push r15
     mov rdi, rsp
     mov rsi, 212
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9182,10 +9182,10 @@ int_stub_213:
     push r15
     mov rdi, rsp
     mov rsi, 213
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9225,10 +9225,10 @@ int_stub_214:
     push r15
     mov rdi, rsp
     mov rsi, 214
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9268,10 +9268,10 @@ int_stub_215:
     push r15
     mov rdi, rsp
     mov rsi, 215
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9311,10 +9311,10 @@ int_stub_216:
     push r15
     mov rdi, rsp
     mov rsi, 216
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9354,10 +9354,10 @@ int_stub_217:
     push r15
     mov rdi, rsp
     mov rsi, 217
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9397,10 +9397,10 @@ int_stub_218:
     push r15
     mov rdi, rsp
     mov rsi, 218
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9440,10 +9440,10 @@ int_stub_219:
     push r15
     mov rdi, rsp
     mov rsi, 219
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9483,10 +9483,10 @@ int_stub_220:
     push r15
     mov rdi, rsp
     mov rsi, 220
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9526,10 +9526,10 @@ int_stub_221:
     push r15
     mov rdi, rsp
     mov rsi, 221
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9569,10 +9569,10 @@ int_stub_222:
     push r15
     mov rdi, rsp
     mov rsi, 222
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9612,10 +9612,10 @@ int_stub_223:
     push r15
     mov rdi, rsp
     mov rsi, 223
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9655,10 +9655,10 @@ int_stub_224:
     push r15
     mov rdi, rsp
     mov rsi, 224
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9698,10 +9698,10 @@ int_stub_225:
     push r15
     mov rdi, rsp
     mov rsi, 225
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9741,10 +9741,10 @@ int_stub_226:
     push r15
     mov rdi, rsp
     mov rsi, 226
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9784,10 +9784,10 @@ int_stub_227:
     push r15
     mov rdi, rsp
     mov rsi, 227
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9827,10 +9827,10 @@ int_stub_228:
     push r15
     mov rdi, rsp
     mov rsi, 228
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9870,10 +9870,10 @@ int_stub_229:
     push r15
     mov rdi, rsp
     mov rsi, 229
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9913,10 +9913,10 @@ int_stub_230:
     push r15
     mov rdi, rsp
     mov rsi, 230
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9956,10 +9956,10 @@ int_stub_231:
     push r15
     mov rdi, rsp
     mov rsi, 231
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -9999,10 +9999,10 @@ int_stub_232:
     push r15
     mov rdi, rsp
     mov rsi, 232
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10042,10 +10042,10 @@ int_stub_233:
     push r15
     mov rdi, rsp
     mov rsi, 233
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10085,10 +10085,10 @@ int_stub_234:
     push r15
     mov rdi, rsp
     mov rsi, 234
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10128,10 +10128,10 @@ int_stub_235:
     push r15
     mov rdi, rsp
     mov rsi, 235
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10171,10 +10171,10 @@ int_stub_236:
     push r15
     mov rdi, rsp
     mov rsi, 236
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10214,10 +10214,10 @@ int_stub_237:
     push r15
     mov rdi, rsp
     mov rsi, 237
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10257,10 +10257,10 @@ int_stub_238:
     push r15
     mov rdi, rsp
     mov rsi, 238
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10300,10 +10300,10 @@ int_stub_239:
     push r15
     mov rdi, rsp
     mov rsi, 239
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10343,10 +10343,10 @@ int_stub_240:
     push r15
     mov rdi, rsp
     mov rsi, 240
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10386,10 +10386,10 @@ int_stub_241:
     push r15
     mov rdi, rsp
     mov rsi, 241
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10429,10 +10429,10 @@ int_stub_242:
     push r15
     mov rdi, rsp
     mov rsi, 242
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10472,10 +10472,10 @@ int_stub_243:
     push r15
     mov rdi, rsp
     mov rsi, 243
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10515,10 +10515,10 @@ int_stub_244:
     push r15
     mov rdi, rsp
     mov rsi, 244
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10558,10 +10558,10 @@ int_stub_245:
     push r15
     mov rdi, rsp
     mov rsi, 245
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10601,10 +10601,10 @@ int_stub_246:
     push r15
     mov rdi, rsp
     mov rsi, 246
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10644,10 +10644,10 @@ int_stub_247:
     push r15
     mov rdi, rsp
     mov rsi, 247
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10687,10 +10687,10 @@ int_stub_248:
     push r15
     mov rdi, rsp
     mov rsi, 248
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10730,10 +10730,10 @@ int_stub_249:
     push r15
     mov rdi, rsp
     mov rsi, 249
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10773,10 +10773,10 @@ int_stub_250:
     push r15
     mov rdi, rsp
     mov rsi, 250
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10816,10 +10816,10 @@ int_stub_251:
     push r15
     mov rdi, rsp
     mov rsi, 251
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10859,10 +10859,10 @@ int_stub_252:
     push r15
     mov rdi, rsp
     mov rsi, 252
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10902,10 +10902,10 @@ int_stub_253:
     push r15
     mov rdi, rsp
     mov rsi, 253
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10945,10 +10945,10 @@ int_stub_254:
     push r15
     mov rdi, rsp
     mov rsi, 254
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13
@@ -10988,10 +10988,10 @@ int_stub_255:
     push r15
     mov rdi, rsp
     mov rsi, 255
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13

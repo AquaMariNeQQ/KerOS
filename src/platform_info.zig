@@ -1,39 +1,40 @@
-comptime {
-    if (!@hasDecl(InterruptController, "eoi") or @TypeOf(InterruptController.eoi) != fn(vector: u8) void) {
-        @compileError("InterruptController must implement 'fn eoi(u8)void'");
-    }
-    if (!@hasDecl(InterruptController, "mapIrq") or @TypeOf(InterruptController.mapIrq) != fn(irq: u8, vector: u8, flags: u8) void) {
-        @compileError("InterruptController must implement 'fn mapIrq(u8, u8, u8)void'");
-    }
-    if (!@hasDecl(InterruptController, "enableIrq") or @TypeOf(InterruptController.enableIrq) != fn(irq: u8) void) {
-        @compileError("InterruptController must implement 'fn enableIrq(u8)void'");
-    }
-    if (!@hasDecl(InterruptController, "disableIrq") or @TypeOf(InterruptController.disableIrq) != fn(irq: u8) void) {
-        @compileError("InterruptController must implement 'fn disableIrq(u8)void'");
-    }
-    if (!@hasDecl(Timer, "getCurrentNs") or @TypeOf(Timer.getCurrentNs) != fn() u64) {
-        @compileError("Timer must implement 'fn getCurrentNs()u64'");
-    }
-    if (!@hasDecl(Timer, "setOneshot") or @TypeOf(Timer.setOneshot) != fn(ns: u64) void) {
-        @compileError("Timer must implement 'fn setOneshot(u64)void'");
-    }
-    if (!@hasDecl(Timer, "setRepeating") or @TypeOf(Timer.setRepeating) != fn(ns: u64) void) {
-        @compileError("Timer must implement 'fn setRepeating(u64)void'");
-    }
-    if (!@hasDecl(Timer, "calibrate") or @TypeOf(Timer.calibrate) != fn() void) {
-        @compileError("Timer must implement 'fn calibrate()void'");
-    }
-    if (!@hasDecl(PowerControl, "calibrate") or @TypeOf(PowerControl.shutdown) != fn() noreturn) {
-        @compileError("PowerControl must implement 'fn shutdown()noreturn'");
-    }
-    if (!@hasDecl(PowerControl, "reboot") or @TypeOf(PowerControl.reboot) != fn () noreturn) {
-        @compileError("PowerControl must implement 'fn reboot()noreturn'");
-    }
 
-}
 
 pub const PlatformInfo = struct {
+    // interrupt_controller: [256]?InterruptController,
     interrupt_controller: InterruptController,
-    timers: Timer,
+    // local_timer: [256]?Timer,
+    local_timer: Timer,
+    high_precision_timer: HPTimer,
     power: PowerControl,
+};
+
+pub const InterruptController = struct {
+    ptr: *anyopaque,
+    eoi: *const fn(ptr: *anyopaque) void,
+    mapIrq: *const fn(ptr: *anyopaque, irq: u8, vector: u8, cpuid: u16) void,
+    enableIrq: *const fn(ptr: *anyopaque, irq: u8) void,
+    disableIrq: *const fn(ptr: *anyopaque, irq: u8) void,
+    isHardwareInterrupt: *const fn(ptr: *anyopaque, vector: u8) bool,
+};
+
+pub const PowerControl = struct {
+    ptr: *anyopaque,
+    shutdown: *const fn(ptr: *anyopaque) noreturn,
+    reboot: *const fn(ptr: *anyopaque) noreturn,
+};
+
+// HPTimer - глобальный источник времени
+pub const HPTimer = struct {
+    ptr: *anyopaque,
+    getCurrentNs: *const fn(ptr: *anyopaque) u64,
+    getFrequencyHz: *const fn(ptr: *anyopaque) u64,
+};
+
+// Timer - per-CPU таймер планировщика
+pub const Timer = struct {
+    ptr: *anyopaque,
+    setOneshot: *const fn(ptr: *anyopaque, ns: u64) void,
+    setRepeating: *const fn(ptr: *anyopaque, ns: u64) void,
+    stop: *const fn(ptr: *anyopaque) void,
 };

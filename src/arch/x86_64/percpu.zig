@@ -32,11 +32,10 @@ pub fn getPerCpu() *PerCpuData {
     );
     return ptr;
 }
-const println = @import("../../utils.zig").println;
 
 pub fn cpuSetup() void {
     const allocator = &getPerCpu().local_slub;
-    const allocated = toVirt(allocator.alloc(._256B) orelse @panic("OOM, we're fucked already, there's no point to continue"));
+    const allocated = toVirt(allocator.alloc(._256B) orelse @panic("OOM, we're screwed already, there's no point to continue"));
     const data: *CPUSetupData = @ptrCast(@alignCast(allocated));
     const tss = TSS.new();
     data.tss = tss;

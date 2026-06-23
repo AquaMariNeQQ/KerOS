@@ -22,10 +22,10 @@ int_stub_{index}:
     push r15
     mov rdi, rsp
     mov rsi, {index}
-    mov r11, rsp
+    mov rbx, rsp
     and rsp, -16
     call int_dispatch
-    mov rsp, r11
+    mov rsp, rbx
     pop r15
     pop r14
     pop r13

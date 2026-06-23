@@ -45,6 +45,7 @@ sync
 if [ "$DEBUG" = true ]; then
 qemu-system-x86_64 \
     -m 2G \
+    -machine q35 \
     -drive if=pflash,format=raw,readonly=on,file=OVMF.fd \
     -drive format=raw,file=build/bin/keros.iso,index=0,media=cdrom \
     -serial stdio \
@@ -56,6 +57,7 @@ qemu-system-x86_64 \
 else
 qemu-system-x86_64 \
     -m 2G \
+    -machine q35,hpet=on \
     -drive if=pflash,format=raw,readonly=on,file=OVMF.fd \
     -drive format=raw,file=build/bin/keros.iso,index=0,media=cdrom \
     -serial stdio \

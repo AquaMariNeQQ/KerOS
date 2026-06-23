@@ -17,7 +17,6 @@ const AllocationSize = @import("../memory.zig").AllocationSize;
 pub const Page = struct {
     /// List for buddy, sometimes - for other things.
     list_node: IntrusiveNode(Page),
-// Состояние страницы
     // Normally - 0x4B334F53
     magic: if (builtin.mode == .Debug or builtin.mode == .ReleaseSafe) u32 else void,
     /// Flags for allocator ONLY
@@ -37,7 +36,7 @@ pub const Page = struct {
         if (comptime builtin.mode == .Debug or builtin.mode == .ReleaseSafe) {
             return self.magic == 0x4B334F53;
         }
-        return true; // В релизе проверки всегда успешны
+        return true;
     }
 
     pub fn set_magic(self: *@This()) void {
@@ -71,47 +70,34 @@ pub const BuddyAllocator = struct {
         const end = region.end & ~@as(u64, 4095);
 
         while (reg_ptr < end) {
-            // 1. Считаем align_order
             const align_order = @as(i64, @intCast(@ctz(reg_ptr))) - 12;
             const safe_align_order: u64 = if (align_order < 0) 0 else @intCast(align_order);
 
-            // 2. Считаем distance_order (безопасный ilog2)
             const clz_val = @clz(end - reg_ptr);
             const ilog2_val = @as(i64, 63) - @as(i64, @intCast(clz_val));
             const distance_order = ilog2_val - 12;
             const safe_distance_order: u64 = if (distance_order < 0) 0 else @intCast(distance_order);
 
-            // 3. Выбираем минимальный order (замена Rust-овскому min().min(10))
             var order = if (safe_distance_order < safe_align_order) safe_distance_order else safe_align_order;
             if (order > 10) order = 10;
             const pageptr: *anyopaque = @ptrFromInt(reg_ptr);
-            // 4. Работаем со страницей
             const page = get_page(&self.chunks, pageptr) orelse return AllocatorError.UninitializedMetadata;
 
             page.order = @intCast(order);
             page.set_magic();
             page.owner_id = 0;
 
-            // Здесь используем синтаксис Zig для флагов (предполагая, что это обычные маски)
             page.flags = .{.is_free = true, .no_owner = true };
 
-            // Вставляем в список
             self.free_lists[order].push_front(page);
 
-            // 5. Инкремент указателя (явный u64 сдвиг)
             reg_ptr += @as(u64, 1) << @intCast(order + 12);
         }
     }
     pub fn new() Self {
+        const ilist = IntrusiveList(Page);
         return .{
-            .free_lists = blk: {
-                const ilist = IntrusiveList(Page);
-                var lists: [BUDDY_LEVELS]ilist = undefined;
-                for (&lists) |*list| {
-                    list.* = ilist.init();
-                }
-                break :blk lists;
-            },
+            .free_lists = @splat(ilist.init()),
             .chunks = std.mem.zeroes([MAX_CHUNKS]?*Page),
             ._total_pages = 0,
         };
@@ -150,7 +136,6 @@ pub const BuddyAllocator = struct {
             const order = size.to_buddy_size();
             var final_order = order;
             for (order..AllocationSize._4MB.to_buddy_size()) |current_order_us| {
-                // Сразу после получения buddy_ptr:
                 const current_order: u8 = @intCast(current_order_us);
                 const buddy_pfn = current_pfn ^ (@as(u64 ,1) << @intCast(current_order));
                 const buddy_ptr: *Page = get_page(&self.chunks, buddy_pfn * 4096) orelse break;
@@ -192,7 +177,6 @@ pub fn add_boot_regions(allocator: *BuddyAllocator, regions: *[64]?MemoryRegion)
                     @memset(page1[0..PAGES_PER_CHUNK], std.mem.zeroes(Page));
                     const page2: [*]Page = @ptrCast(@alignCast(toVirt(@ptrFromInt(start + metadata_size))));
                     @memset(page2[0..PAGES_PER_CHUNK], std.mem.zeroes(Page));
-                    var printed = false;
                     for (0..PAGES_PER_CHUNK) |offset| {
                         const p1 = &page1[offset];
                         const p2 = &page2[offset];
@@ -200,9 +184,6 @@ pub fn add_boot_regions(allocator: *BuddyAllocator, regions: *[64]?MemoryRegion)
                         p2.flags = .{.no_owner = true, .is_free = false};
                         p1.chunk = 0;
                         p2.chunk = 1;
-                        if (allocator.free_lists[1].head != null and !printed) {
-                            printed = true;
-                        }
                         p2.set_magic();
                         p1.set_magic();
                     }
@@ -244,7 +225,6 @@ pub fn add_boot_regions(allocator: *BuddyAllocator, regions: *[64]?MemoryRegion)
 
                 else |_| {
                     @panic("hell 311");
-                    // println("{}", &msg);
                 }
             }
         }
@@ -255,13 +235,7 @@ pub fn add_boot_regions(allocator: *BuddyAllocator, regions: *[64]?MemoryRegion)
 
 
 pub fn add_other_regions(allocator: *BuddyAllocator, regions: *[64]?MemoryRegion) void {
-    var needed_chunks: [MAX_CHUNKS]bool = blk: {
-        var chunks: [MAX_CHUNKS]bool = undefined;
-        for (&chunks) |*c| {
-            c.* = false;
-        }
-        break :blk chunks;
-    };
+    var needed_chunks: [MAX_CHUNKS]bool = @splat(false);
     for (regions) |*region| {
         if (region.*) |*reg| {
             if (reg.kind == .usable) {
@@ -304,10 +278,9 @@ pub fn add_other_regions(allocator: *BuddyAllocator, regions: *[64]?MemoryRegion
                 virt_addr[0].flags = .{.is_free = true, .no_owner = true};
                 virt_addr[0].chunk = @intCast(chunk_idx);
                 virt_addr[0].set_magic();
-                // "Откусываем"
                 reg.start += @intCast(metadata_size);
-                need_chunk.* = false; // Потребность закрыта
-                break; // Переходим к следующему chunk_idx
+                need_chunk.* = false;
+                break;
                 }
             }
         }
@@ -318,12 +291,12 @@ pub fn add_other_regions(allocator: *BuddyAllocator, regions: *[64]?MemoryRegion
         }
         break :blk false;
     };
-    if (missing_chunk) @panic("Chunk metadata not initialized! WHERE THE FUCK IS ALL THE PLACE????");
+    if (missing_chunk) @panic("Chunk metadata not initialized! WHERE IS ALL THE PLACE????");
     for (regions) |*region| {
         if (region.*) |*reg| {
             if (reg.kind == .usable) {
                 allocator.add_region(reg.*) catch {
-                    @panic("hell 627");
+                    @panic("hell 309");
                     // std.debug.print("Failed to add region: {}\n", .{err});
                 };
             }

@@ -37,18 +37,16 @@ _start:
     mov esp, stack_top - K_VIRT_BASE
     mov edi, ebx
 
-    ; 1. Настройка таблиц (физические адреса)
     mov eax, pdpt_table - K_VIRT_BASE
     or eax, 0b11
     mov [pml4_table - K_VIRT_BASE], eax          ; Identity mapping
-    mov [pml4_table - K_VIRT_BASE + 2048], eax   ; Higher Half mapping (slot 511)
+    mov [pml4_table - K_VIRT_BASE + 2048], eax   ; Higher Half mapping (slot 256)
 
     mov eax, pd_table - K_VIRT_BASE
     or eax, 0b11
     mov [pdpt_table - K_VIRT_BASE], eax
     mov [pdpt_table - K_VIRT_BASE + 0], eax
 
-    ; 2. Цикл маппинга 1 Гб (Huge pages по 2 Мб)
     mov ecx, 0
 
 .map_pd_table:
@@ -104,7 +102,7 @@ long_mode_entry:
     mov es, ax
     mov ss, ax
     movabs rax, gdt_ptr_high
-    push 0x08           ; code selector
+    push 0x08 ; code selector
     lea rax, [.reload_cs]
     push rax
     retfq

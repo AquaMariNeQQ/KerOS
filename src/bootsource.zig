@@ -18,7 +18,7 @@ pub const BootInfo = struct {
                 return;
             }
         }
-        @panic("Regions are fucked");
+        @panic("Regions are screwed");
     }
 };
 

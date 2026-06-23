@@ -4,6 +4,7 @@ const PerCpuData = @import("smp/percpu.zig").PerCpuData;
 const AbstractPageFlags = @import("memory/vm.zig").AbstractPageFlags;
 const MapError = @import("memory/vm.zig").MapError;
 const AddrSpace = @import("memory/vm.zig").AddrSpace;
+const PlatformInfo = @import("platform_info.zig").PlatformInfo;
 
 pub const arch = if (builtin.target.cpu.arch == .x86_64) @import("arch/x86_64/impl.zig")
 else @compileError("Архитектура ещё не поддерживается!");
@@ -12,8 +13,8 @@ pub const CBSource =
     if (@hasDecl(arch.bootsource, "parse") and @TypeOf(arch.bootsource.parse) == fn (*anyopaque) BootInfo) arch.bootsource
     else @compileError("Bootsource must implement the 'parse' function");
 pub const write_bytes =
-    if (@hasDecl(arch.utils, "print") and @TypeOf(arch.utils.print) == fn ([]const u8) void) arch.utils.print
-    else @compileError("Arch Implementation must implement the 'print' function");
+    if (@hasDecl(arch.utils, "writeBytes") and @TypeOf(arch.utils.writeBytes) == fn ([]const u8) void) arch.utils.writeBytes
+    else @compileError("Arch Implementation must implement the 'writeBytes' function");
 pub const PCDSource =
     if (@hasDecl(arch.PerCpuUtils, "getPerCpu") and @TypeOf(arch.PerCpuUtils.getPerCpu) == fn() *PerCpuData
         and @hasDecl(arch.PerCpuUtils, "installPerCpu") and @TypeOf(arch.PerCpuUtils.installPerCpu) == fn(*PerCpuData) void) arch.PerCpuUtils
@@ -36,5 +37,10 @@ pub const InterruptHandlers =
 pub const ArchSpecific =
     if (
         @hasDecl(arch.PerCpuUtils, "cpuSetup") and @TypeOf(arch.PerCpuUtils.cpuSetup) == fn() void
-    ) arch.Specific
+    ) arch.PerCpuUtils
     else @compileError("Specific in arch must implement 'setup'");
+pub const CurrentPlInfoSource =
+    if (@hasDecl(arch.Acpi, "parse") and @TypeOf(arch.Acpi.parse) == fn(*anyopaque) PlatformInfo) arch.Acpi
+    else @compileError("The ACPI in arch must implement 'fn(*anyopaque)PlatformInfo'");
+
+pub const pf_handler = @import("arch/x86_64/interrupts.zig").pf_handler;

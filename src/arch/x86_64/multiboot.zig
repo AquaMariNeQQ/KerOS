@@ -106,7 +106,7 @@ pub fn parse(ptr: *anyopaque) BootInfo {
                         }
                     } else if (current_entry_ptr.typ == 5) {
                         boot_info.add_region(a_start, a_end, .bad);
-                    } else if (current_entry_ptr.typ == 2) {
+                    } else if (current_entry_ptr.typ == 2 or current_entry_ptr.typ == 3 or current_entry_ptr.typ == 4) {
                         boot_info.add_region(a_start, a_end, .bootloader);
                     } else {
                         boot_info.add_region(a_start, a_end, .reserved);
